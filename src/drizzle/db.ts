@@ -9,7 +9,8 @@ import * as schema from "./schema";
 
 
 export const client = new Client({
- connectionString: process.env.Database_URL as string,
+ //connectionString: process.env.Database_URL as string, failed to coonect to db
+ const DatabaseUrl = ("postgresql://project1bd_owner:67uKeRnNgiIW@ep-yellow-silence-a5jgqdnz.us-east-2.aws.neon.tech/project1bd?sslmode=require")
 
 })
 
