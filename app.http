@@ -1,0 +1,95 @@
+
+
+
+  ###all users
+  
+ GET http://localhost:8000/driver
+
+
+###insert a new user
+ POST http://localhost:8000/register
+  Content-Type: application/json
+  Accept: application/json
+
+   {
+    "userId": 6,
+    "username": "zinadene",
+   "password": "ddd"
+   
+   }
+
+### update
+ PUT http://localhost:8000/driver
+  Content-Type: application/json
+  Accept: application/json
+
+  {
+     
+  
+    "car_make": "BMW",
+    "car_model": "WRs",
+    "car_year": 20600,
+    "user_id": 235
+  
+   }
+
+  
+
+  
+### delete
+ DELETE  http://localhost:8000/restraunts/3
+
+
+###insert restraunts
+
+  POST http://localhost:8000/driver
+Content-Type: application/json
+Accept: application/json
+
+  {
+     "car_make": "tMW",
+    "car_model": "Wrs",
+    "car_year": 2000,
+    "user_id": 235
+  
+
+  }
+
+###update restraunts
+
+PUT   http://localhost:8000/restraunts/
+  Content-Type: application/json
+  Accept: application/json
+
+  {
+    
+  }
+
+###
+  POST http://localhost:8000/login
+    Content-Type: application/json
+
+    {
+       "username": "arthur",
+   "password": "paser"
+
+    }
+
+###admin 
+  GET http://localhost:8000/users/6
+   Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBhYmxvIiwicm9sZSI6ImFkbWluIiwidXNlcklkIjo1LCJleHAiOjE3MTgxMTU3ODJ9.zdECR9BXHbkl88FhJK4YThAcXOFre8o_agsE10rmojs
+
+### user//non admin
+POST   http://localhost:8000/login
+     Content-Type: application/json
+
+    {
+       "username": "zinadene",
+   "password": "ddd"
+
+    }
+
+###user // non admin
+GET http://localhost:8000/users/6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InppbmFkZW5lIiwicm9sZSI6InVzZXIiLCJ1c2VySWQiOjYsImV4cCI6MTcxODEyMzAzMX0.z_xKKJ5rwKt0E8po-G0eqiPrkTr1L5ndIfUUCKQOVIE
+
