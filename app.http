@@ -5,12 +5,16 @@
   
  GET http://localhost:8000/users
 
- ### insert users
- POST http://localhost:8000/users
+### insert users
+
+POST http://localhost:8000/users
   Content-Type: application/json
   Accept: application/json
 
    {
+    "name": "fiver",
+    "email": "ghh@example.com",
+    "password": "123456"
    
    
    }
@@ -22,7 +26,7 @@
   Accept: application/json
 
    {
-    "userId": 6,
+    "userId": 1,
     "username": "zinadene",
    "password": "ddd"
    
@@ -36,7 +40,9 @@
   POST http://localhost:8000/login
     Content-Type: application/json
 
-    {
+    {    
+        "username": "zinadene",
+        "password": "ddd"
    
 
     }
@@ -109,6 +115,11 @@ Content-Type: application/json
 Accept: application/json
 
 {
+    "name":"trues",
+        "street_address":"texas",
+        "zip_code":345,
+        "city_id":1,
+        "createdAt":null
 
 
 }
@@ -144,7 +155,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-
+ "name":"howling",
+    "code":3490,
+    "city":"Mississipi"
 
 }
 
@@ -155,7 +168,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-
+   "name":"howlong",
+    "code":3490,
+    "city":"Mississipi"
 
 }
 
@@ -178,6 +193,17 @@ Content-Type: application/json
 Accept: application/json
 
 {
+    "estimated_delivery_time":12,
+    "actual_delivery_time":9,
+    "delivery_address_id":8,
+    "user_id":5,
+    "driver_id":10,
+    "price":4900,
+    "discount":900,
+    "final_price":4000,
+    "comment":"Best Quality",
+    "resrtraunt_Id":23,
+    "restraunt_id":2
 
 
 }
@@ -215,9 +241,9 @@ Accept: application/json
 {
         "street_adddress_1":"Michigan",
         "street_adddress_2":"Michigan",
-        "zip_code":"Wn",
+        "zip_code":50,
         "delivery_instructions":"On the first line",
-        "user_id":8
+        "user":"Morgan"
 
 
 }
@@ -228,11 +254,13 @@ Accept: application/json
 
 ###update address
 
-PUT http://localhost:8000/address
+PUT http://localhost:8000/address/9
 Content-Type: application/json
 Accept: application/json
 
 {
+   "street_adddress_1":"Garissa"
+      
 
 
 }
@@ -333,7 +361,13 @@ Content-Type: application/json
 Accept: application/json
 
 {
-
+     "name":"Pizza",
+        "restraunt_id":2,
+        "category_id":6,
+        "description":"deep Fry",
+        "ingredients":"Raw Meet",
+        "price":3899,
+        "active":true
 }
 
 ###update menu_item
