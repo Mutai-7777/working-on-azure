@@ -5,7 +5,7 @@ import { addressService,getaddressService,updateaddressService,createaddressServ
 export const listaddress= async ( c: Context) => { ``
   const data = await addressService();
   if (data == null || data.length==0) {
-    return c.text("hello Ian user not found",404)
+    return c.text("hello Ian no address  found",404)
 
   }
 

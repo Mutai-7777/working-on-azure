@@ -4,7 +4,7 @@ import { driverService, getdriverService, updatedriverService, createdriverServi
 export const listdriver = async (c: Context) => {
     const data = await driverService();
     if (data == null || data.length == 0) {
-        return c.text("hello Ian user not found", 404);
+        return c.text("hello Ian no drivers found", 404);
     }
     return c.json(data, 200);
 }

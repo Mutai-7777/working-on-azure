@@ -4,7 +4,7 @@ import { menu_itemService, getmenu_itemService, updatemenu_itemService, createme
 export const listmenu_item = async (c: Context) => {
     const data = await menu_itemService();
     if (data == null || data.length == 0) {
-        return c.text("hello Ian user not found", 404);
+        return c.text("hello Ian menu_items not found", 404);
     }
     return c.json(data, 200);
 }

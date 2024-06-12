@@ -3,7 +3,17 @@
 
   ###all users
   
- GET http://localhost:8000/driver
+ GET http://localhost:8000/users
+
+ ### insert users
+ POST http://localhost:8000/users
+  Content-Type: application/json
+  Accept: application/json
+
+   {
+   
+   
+   }
 
 
 ###insert a new user
@@ -18,60 +28,16 @@
    
    }
 
-### update
- PUT http://localhost:8000/driver
-  Content-Type: application/json
-  Accept: application/json
-
-  {
-     
-  
-    "car_make": "BMW",
-    "car_model": "WRs",
-    "car_year": 20600,
-    "user_id": 235
-  
-   }
-
-  
-
-  
-### delete
- DELETE  http://localhost:8000/restraunts/3
 
 
-###insert restraunts
 
-  POST http://localhost:8000/driver
-Content-Type: application/json
-Accept: application/json
-
-  {
-     "car_make": "tMW",
-    "car_model": "Wrs",
-    "car_year": 2000,
-    "user_id": 235
-  
-
-  }
-
-###update restraunts
-
-PUT   http://localhost:8000/restraunts/
-  Content-Type: application/json
-  Accept: application/json
-
-  {
-    
-  }
 
 ###
   POST http://localhost:8000/login
     Content-Type: application/json
 
     {
-       "username": "arthur",
-   "password": "paser"
+   
 
     }
 
@@ -92,4 +58,415 @@ POST   http://localhost:8000/login
 ###user // non admin
 GET http://localhost:8000/users/6
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InppbmFkZW5lIiwicm9sZSI6InVzZXIiLCJ1c2VySWQiOjYsImV4cCI6MTcxODEyMzAzMX0.z_xKKJ5rwKt0E8po-G0eqiPrkTr1L5ndIfUUCKQOVIE
+
+
+
+
+
+### category
+GET http://localhost:8000/category
+
+### insert category
+
+POST http://localhost:8000/category
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "test"
+}
+
+### update category
+
+PUT http://localhost:8000/category
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "test2"
+}
+
+### delete category
+
+DELETE http://localhost:8000/category/1
+
+
+
+
+
+
+
+### get restraunts
+
+GET http://localhost:8000/restraunts
+
+###insert restraunt
+
+POST http://localhost:8000/restraunts
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update restraunt
+
+PUT http://localhost:8000/restraunts
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete restraunt
+
+DELETE http://localhost:8000/restraunts/1
+
+
+
+
+
+
+###get states
+
+GET http://localhost:8000/state
+
+###insert states
+
+POST http://localhost:8000/state
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update states
+
+PUT http://localhost:8000/state
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete states
+
+DELETE http://localhost:8000/state/1
+
+
+
+
+
+### get orders
+
+GET http://localhost:8000/Orders
+
+###insert orders
+
+POST http://localhost:8000/Orders
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update Orders
+
+PUT http://localhost:8000/Orders/
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete Orders
+
+DELETE http://localhost:8000/Orders/
+
+
+
+
+
+
+### get address
+
+GET http://localhost:8000/address/
+
+###insert address
+
+POST http://localhost:8000/address
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update address
+
+PUT http://localhost:8000/address
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete address
+
+DELETE http://localhost:8000/address/
+
+
+
+
+
+
+
+###get city
+
+GET http://localhost:8000/city/
+
+###insert city
+
+POST http://localhost:8000/city/2
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update city
+
+PUT http://localhost:8000/city/2
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete city
+
+DELETE http://localhost:8000/city/
+
+
+
+
+
+
+
+###get comment
+
+GET http://localhost:8000/comment/
+
+###insert comment
+
+POST http://localhost:8000/comment
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###update comment
+
+PUT http://localhost:8000/comment
+Content-Type: application/json
+Accept: application/json
+
+{
+
+
+}
+
+###delete comment
+
+DELETE http://localhost:8000/comment/
+
+
+
+
+
+###get menu_item
+
+GET http://localhost:8000/menu_item/
+
+###insert menu_item
+
+POST http://localhost:8000/menu_item
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###update menu_item
+
+PUT http://localhost:8000/menu_item
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###delete menu_item
+
+DELETE http://localhost:8000/menu_item/
+
+
+
+
+
+
+
+### get Orderstatus
+
+GET http://localhost:8000/OrderStatus/
+
+###insert Orderstatus
+
+POST http://localhost:8000/OrderStatus
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###update Orderstatus
+
+PUT http://localhost:8000/OrderStatus
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###delete Orderstatus
+
+DELETE http://localhost:8000/OrderStatus/
+
+
+
+
+
+
+### get restrauntowner
+
+GET http://localhost:8000/restrauntowner/
+
+###insert restrauntowner
+
+POST http://localhost:8000/restrauntowner
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###update restrauntowner
+
+PUT http://localhost:8000/restrauntowner
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###delete restrauntowner
+
+DELETE http://localhost:8000/restrauntowner/
+
+
+
+
+
+###  get StatusCatalog
+
+GET http://localhost:8000/StatusCatalog/
+
+###insert StatusCatalog
+
+POST http://localhost:8000/StatusCatalog
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###update StatusCatalog
+
+PUT http://localhost:8000/StatusCatalog
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###delete StatusCatalog
+
+DELETE http://localhost:8000/StatusCatalog/
+
+
+
+
+
+
+
+### get OrderMenuItem
+
+GET http://localhost:8000/orderMenuItem/
+
+###insert OrderMenuItem
+
+POST http://localhost:8000/orderMenuItem
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###update OrderMenuItem
+
+PUT http://localhost:8000/orderMenuItem
+Content-Type: application/json
+Accept: application/json
+
+{
+
+}
+
+###delete OrderMenuItem
+
+DELETE http://localhost:8000/orderMenuItem/
+
+
+
 

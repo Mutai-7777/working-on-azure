@@ -10,7 +10,7 @@ import {
 export const listOrderStatus = async (c: Context) => {
   const data = await OrderStatusService();
   if (data == null || data.length == 0) {
-    return c.text("hello Ian user not found", 404);
+    return c.text("hello Ian no order status found", 404);
   }
 
   return c.json(data, 200);

@@ -5,7 +5,7 @@ import { restrauntService,getrestrauntService,updaterestrauntService,createrestr
 export const listrestraunt= async ( c: Context) => { ``
   const data = await restrauntService();
   if (data == null || data.length==0) {
-    return c.text("hello Ian user not found",404)
+    return c.text("hello Ian no restraunts found",404)
 
   }
 

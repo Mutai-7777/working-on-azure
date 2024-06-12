@@ -8,12 +8,10 @@ import * as schema from "./schema";
 
 
 
-export const client = new Client({
- connectionString: process.env.Database_URL as string,
+export const client = new Client({connectionString: process.env.Database_URL as string,})
 
-})
-
-const DatabaseUrl = process.env.Database_URL as string;
+//const //DatabaseUrl = process.env.Database_URL as string; failed to connect to database on azure
+const DatabaseUrl = ("postgresql://project1bd_owner:67uKeRnNgiIW@ep-yellow-silence-a5jgqdnz.us-east-2.aws.neon.tech/project1bd?sslmode=require")
 if (!DatabaseUrl) {
     throw new Error("DatabaseUrl not set");
 }

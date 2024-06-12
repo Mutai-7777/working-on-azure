@@ -4,7 +4,7 @@ import { commentService, getcommentService, updatecommentService, createcommentS
 export const listcomment = async (c: Context) => {
     const data = await commentService();
     if (data == null || data.length == 0) {
-        return c.text("hello Ian user not found", 404);
+        return c.text("hello Ian no comments found", 404);
     }
     return c.json(data, 200);
 }

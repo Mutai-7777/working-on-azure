@@ -4,7 +4,7 @@ import { orderMenuItemService, getOrderMenuItemService, updateOrderMenuItemServi
 export const listOrderMenuItem = async (c: Context) => {
   const data = await orderMenuItemService();
   if (data == null || data.length == 0) {
-    return c.text("hello Ian user not found", 404);
+    return c.text("hello Ian OrderMenuItem  not found", 404);
   }
   return c.json(data, 200);
 };

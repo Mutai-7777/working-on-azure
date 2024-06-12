@@ -4,7 +4,7 @@ import { cityService, getcityService, updatecityService, createcityService, dele
 export const listcity= async ( c: Context) => { ``
   const data = await cityService();
   if (data == null || data.length==0) {
-    return c.text("hello Ian user not found",404)
+    return c.text("hello Ian no city found",404)
 
   }
 

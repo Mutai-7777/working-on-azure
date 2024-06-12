@@ -4,7 +4,7 @@ import { OrdersService, getOrdersService, updateOrdersService, createOrdersServi
 export const listOrders = async (c: Context) => {
     const data = await OrdersService();
     if (data == null || data.length == 0) {
-        return c.text("hello Ian user not found", 404);
+        return c.text("hello Ian no orders found", 404);
     }
     return c.json(data, 200);
 }
