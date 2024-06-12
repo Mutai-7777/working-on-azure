@@ -29,10 +29,9 @@
     export const addressSchema = z.object({
         street_adddress_1:z.string(),
         street_adddress_2:z.string(),
-        zip_code:z.string(),
+        zip_code:z.number(),
         delivery_instructions:z.string(),
-        city_id:z.number(),
-        user_id:z.number()
+        user:z.string()
     })
     export const categorySchema = z.object({
         name:z.string(),
@@ -40,12 +39,9 @@
 
     })
     export const citySchema = z.object({
-        city_id:z.number(),
         name:z.string(),
-        state_id:z.number(),
-        address:z.string(),
-        state:z.string(),
-        restraunt:z.string()
+        state_id:z.number()
+        
     })
     export const commentSchema = z.object({
         order_id:z.number(),

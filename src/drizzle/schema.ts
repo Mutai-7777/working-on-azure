@@ -59,8 +59,9 @@ export const authRelations = relations(AuthOnUsersTable,({one}) => ({
     export const cityTable = pgTable("cityTable",{
         id: serial("id").primaryKey(),
         name: text("name").notNull(),
-        state_id: integer("state_id").notNull().references(()=> stateTable.id,{ onDelete:"cascade"})
-    });
+        state_id: integer("state_id").notNull().references(()=> stateTable.id,{ onDelete:"cascade"}),
+        zip_code:integer("zip_code").notNull()
+    })
   
     
 
@@ -94,10 +95,9 @@ export const authRelations = relations(AuthOnUsersTable,({one}) => ({
     id : serial("id").primaryKey(),
     street_adddress_1: text("street_adddress_1").notNull(),
     street_adddress_2: text("street_adddress_2"),
-    zip_code: text("zip_code").notNull(),
+    zip_code: integer("zip_code").notNull(),
     delivery_instructions: text("delivery_instructions"),
-    city_id: integer("city_id").notNull().references(()=> cityTable.id,{ onDelete:"cascade"}),
-    user_id: text("user")
+    user_id: integer("user")
  })
  ///////adress relationships
  export const AddressRelationss = relations(addressTable,({one}) => ({

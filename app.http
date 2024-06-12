@@ -73,17 +73,19 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "test"
+     "name": "test2",
+    "menu_item": "pizza"
 }
 
 ### update category
 
-PUT http://localhost:8000/category
+PUT http://localhost:8000/category/
 Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "test2"
+    "name": "test2",
+    "menu_items": "pizza"
 }
 
 ### delete category
@@ -211,9 +213,18 @@ Content-Type: application/json
 Accept: application/json
 
 {
+        "street_adddress_1":"Michigan",
+        "street_adddress_2":"Michigan",
+        "zip_code":"Wn",
+        "delivery_instructions":"On the first line",
+        "user_id":8
 
 
 }
+      
+
+
+
 
 ###update address
 
@@ -242,11 +253,14 @@ GET http://localhost:8000/city/
 
 ###insert city
 
-POST http://localhost:8000/city/2
+POST http://localhost:8000/city
 Content-Type: application/json
 Accept: application/json
 
 {
+  "name":"naivasha",
+  "state_id":1,
+  "zip_code":23
 
 
 }
@@ -283,7 +297,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-
+     "order_id":1,
+       "user_id":1,
+        "comment_text":"good"
 
 }
 
