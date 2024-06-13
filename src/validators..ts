@@ -25,8 +25,7 @@ export const userSchema = z.object({
     email_verified: z.boolean().default(false).optional(),
     confirmation_code: z.string().length(6).optional(),
     password: z.string().max(255),
-    created_at: z.date().default(new Date()).optional(),
-    updated_at: z.date().default(new Date()).optional(),
+  
   });
   
   export const restrauntSchema = z.object({
@@ -34,21 +33,19 @@ export const userSchema = z.object({
       street_address:z.string(),
       zip_code:z.number(),
       city_id:z.number(),
-      createdAt:z.date().optional().nullable(),
-      updatedAt:z.date().optional().nullable(),
+    
       
       })
   
       export const addressSchema = z.object({
           id: z.number().int().optional(),
-          street_adddress_1: z.string(),
-          street_adddress_2: z.string().optional(),
+          street_address_1: z.string(),
+          street_address_2: z.string().optional(),
           zip_code: z.number(),
           delivery_instructions: z.string().optional(),
           user_id: z.number().int(),
           city_id:z.number(),
-          created_at:z.date().optional(),
-          updated_at:z.date().optional(),
+         
           
   
   
@@ -62,8 +59,7 @@ export const userSchema = z.object({
   export const OrdersSchema = z.object({
     id: z.number().int().optional(),
     restaurant_id: z.number().int(),
-    estimated_delivery_time: z.date().optional(),
-    actual_delivery_time: z.date().optional(),
+   
     delivery_address_id: z.number().int(),
     user_id: z.number().int(),
     driver_id: z.number().int().optional(),
@@ -71,8 +67,7 @@ export const userSchema = z.object({
     discount: z.number().positive().optional().nullable(),
     final_price: z.number().positive(),
     comment: z.string().optional().nullable(),
-    created_at: z.date().default(new Date()).optional(),
-    updated_at: z.date().default(new Date()).optional(),
+  
     
   });
   
@@ -150,7 +145,7 @@ export const userSchema = z.object({
     id: z.number().int().optional(),
     order_id: z.number().int(),
     status_catalog_id: z.number().int(),
-    created_at: z.date().default(new Date()).optional(),
+
   });
   export const  restrauntownerSchema = z.object({
     id: z.number().int().optional(),

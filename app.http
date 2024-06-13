@@ -115,14 +115,16 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name":"trues",
+        "name":"Kentucky",
         "street_address":"texas",
         "zip_code":345,
-        "city_id":1,
-        "createdAt":null
-
-
+        "city_id":1
+       
 }
+        
+
+
+
 
 ###update restraunt
 
@@ -155,9 +157,10 @@ Content-Type: application/json
 Accept: application/json
 
 {
- "name":"howling",
-    "code":3490,
-    "city":"Mississipi"
+  "id":10,
+ "name":"Houston",
+    "code":"TTD"
+    
 
 }
 
@@ -168,7 +171,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-   "name":"howlong",
+   "name":"houston",
     "code":3490,
     "city":"Mississipi"
 
@@ -193,17 +196,19 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "estimated_delivery_time":12,
-    "actual_delivery_time":9,
-    "delivery_address_id":8,
-    "user_id":5,
-    "driver_id":10,
-    "price":4900,
-    "discount":900,
-    "final_price":4000,
-    "comment":"Best Quality",
-    "resrtraunt_Id":23,
-    "restraunt_id":2
+   "id":9,
+  "restaurant_id":3,
+  " estimated_delivery_time":null,
+  "actual_delivery_time":null,
+  "delivery_address_id":1,
+  "user_id":3,
+  "driver_id":4,
+  "price":2790,
+  "discount":90,
+  "final_price":2700,
+  "comment":"best",
+  "created_at":null,
+  "updated_at":null
 
 
 }
@@ -215,6 +220,20 @@ Content-Type: application/json
 Accept: application/json
 
 {
+   
+   "id":9,
+  "restaurant_id":3,
+  " estimated_delivery_time":null,
+  "actual_delivery_time":7,
+  "delivery_address_id":1,
+  "user_id":3,
+  "driver_id":4,
+  "price":2790,
+  "discount":90,
+  "final_price":2700,
+  "comment":"best",
+  "created_at":"date",
+  "updated_at":null
 
 
 }
@@ -239,9 +258,12 @@ Content-Type: application/json
 Accept: application/json
 
 {
-        "street_adddress_1":"Michigan",
-        "street_adddress_2":"Michigan",
+        
+        "street_address_2":"Kensas",
         "zip_code":50,
+        "user_id":2,
+        "city_id":1,
+        "street_address_1":"kensas",
         "delivery_instructions":"On the first line",
         "user":"Morgan"
 
@@ -286,8 +308,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "name":"naivasha",
-  "state_id":1,
+  "id": 9,
+  "name":"Michigan",
+  "state_id":2,
   "zip_code":23
 
 
@@ -325,9 +348,13 @@ Content-Type: application/json
 Accept: application/json
 
 {
+     "id":6,
      "order_id":1,
-       "user_id":1,
-        "comment_text":"good"
+       "user_id":2,
+        "comment_text":"good quality",
+         "is_complaint":true,
+         "is_praise":true
+
 
 }
 
@@ -360,9 +387,11 @@ POST http://localhost:8000/menu_item
 Content-Type: application/json
 Accept: application/json
 
-{
-     "name":"Pizza",
-        "restraunt_id":2,
+{ 
+     "id":9,
+     
+     "name":"Melody",
+       "restaurant_id" :2,
         "category_id":6,
         "description":"deep Fry",
         "ingredients":"Raw Meet",
@@ -400,9 +429,8 @@ POST http://localhost:8000/OrderStatus
 Content-Type: application/json
 Accept: application/json
 
-{
 
-}
+
 
 ###update Orderstatus
 
@@ -466,6 +494,12 @@ Content-Type: application/json
 Accept: application/json
 
 {
+  "id":9,
+  "name":"Delivered",
+  "order_status_id":9,
+  "order_menu_item_id":9,
+  "order_id":2,
+  "user_id":1
 
 }
 

@@ -31,8 +31,7 @@ export const RestrauntTable = pgTable('restaurant', {
     street_address: varchar("street_address", { length: 255 }).notNull(),
     zip_code: varchar("zip_code", { length: 50 }).notNull(),
     city_id: integer("city_id").references(() => cityTable.id, { onDelete: "cascade" }),
-    createdAt: timestamp("createdAt").defaultNow(),
-    updatedAt: timestamp("updatedAt").defaultNow(),
+   
 });
 
 // Address Table
@@ -44,8 +43,7 @@ export const addressTable = pgTable("address", {
     delivery_instructions: text("delivery_instructions"),
     user_id: integer("user_id"),
     city_id: integer("city_id"),  //.references(() => cityTable.id, { onDelete: "cascade" }),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+   
 });
 
 // Category Table
@@ -69,8 +67,7 @@ export const commentTable = pgTable('comment', {
     comment_text: text("comment_text").notNull(),
     is_complaint: boolean("is_complaint").default(false),
     is_praise: boolean("is_praise").default(false),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+   
 });
 
 // Driver Table
@@ -82,8 +79,7 @@ export const driverTable = pgTable('driver', {
     user_id: integer("user_id").references(() => UsersTable.id, { onDelete: "cascade" }),
     online: boolean("online").default(false),
     delivering: boolean("delivering").default(false),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    
 });
 
 // MenuItem Table
@@ -96,8 +92,7 @@ export const menu_itemTable = pgTable('menu_item', {
     ingredients: text("ingredients").notNull(),
     price: decimal("price").notNull(),
     active: boolean("active").default(true),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    
 });
 
 // OrderMenuItem Table
@@ -116,15 +111,13 @@ export const OrderStatusTable = pgTable('order_status', {
     id: serial("id").primaryKey(),
     order_id: integer("order_id").references(() => OrdersTable .id, { onDelete: "cascade" }),
     status_catalog_id: integer("status_catalog_id").references(() => statusCatalogTable.id, { onDelete: "cascade" }),
-    created_at: timestamp("created_at").defaultNow(),
 });
 
 // Orders Table
 export const OrdersTable  = pgTable('orders', {
     id: serial("id").primaryKey(),
     restaurant_id: integer("restaurant_id").references(() => RestrauntTable.id, { onDelete: "cascade" }),
-    estimated_delivery_time: timestamp("estimated_delivery_time"),
-    actual_delivery_time: timestamp("actual_delivery_time"),
+   
     delivery_address_id: integer("delivery_address_id").references(() => addressTable.id, { onDelete: "cascade" }),
     user_id: integer("user_id").references(() => UsersTable.id, { onDelete: "cascade" }),
     driver_id: integer("driver_id").references(() => driverTable.id, { onDelete: "cascade" }),
@@ -132,8 +125,7 @@ export const OrdersTable  = pgTable('orders', {
     discount: decimal("discount"),
     final_price: decimal("final_price").notNull(),
     comment: text("comment"),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+   
 });
 
 // State Table
@@ -161,8 +153,7 @@ export const UsersTable = pgTable('users', {
     email_verified: boolean("email_verified").default(false),
     confirmation_code: varchar("confirmation_code", { length: 6 }),
     password: varchar("password", { length: 255 }).notNull(),
-    created_at: timestamp("created_at").defaultNow(),
-    updated_at: timestamp("updated_at").defaultNow(),
+    
 });
 
 // RestaurantOwner Table
