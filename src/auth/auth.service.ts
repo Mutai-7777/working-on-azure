@@ -27,9 +27,7 @@ import { sql } from "drizzle-orm";
         email_verified:true, 
         contact_phone:true,
         phone_verified:true,
-        confirmation_code:true,
-        created_at:true,
-        updated_at:true
+        confirmation_code:true
       
       }
 
