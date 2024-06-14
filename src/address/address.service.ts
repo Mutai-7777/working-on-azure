@@ -14,20 +14,20 @@ import { addressTable } from '../drizzle/schema';
    })
  }
 
- //creating a new user
- export const createaddressService = async (address: TIaddress)  => {
+ //creating a new adress
+ export const createaddressService = async (address: TIaddress) => {
        await db.insert(addressTable).values(address)
     return { msg:"User created successfully"}
  }
 
 
- //updating users
+ //updating address
  export const updateaddressService = async (id: number, address: TIaddress) => {
      await db.update(addressTable).set(address).where(eq(addressTable.id, id))
     return { msg:"User updated successfully"}
  }
 
- //deleting users
+ //deleting adresses
  export const deleteaddressService = async (id: number) => {
      await db.delete(addressTable).where(eq(addressTable.id, id))
     return { msg:"User deleted successfully"}

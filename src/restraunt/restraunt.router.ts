@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { Context } from "hono";
-import { listrestraunt,getrestraunt,createrestraunt, updaterestraunt, deleterestraunt} from "./restraunt.controller";
+import { listrestraunt,getrestraunt,createrestraunt, updaterestraunt, deleterestraunt, restrauntwithothers} from "./restraunt.controller";
 import {zValidator} from "@hono/zod-validator";
 import { restrauntSchema } from "../validators.";
 
@@ -32,3 +32,8 @@ restrauntRouter.get("/restraunts", zValidator('json',restrauntSchema,(result,c)=
 restrauntRouter.delete("/restraunts/:id", deleterestraunt)
 
 restrauntRouter.get("/restraunts", getrestraunt);
+
+
+///restraunt with other
+
+restrauntRouter.get("/restrauntwithothers", restrauntwithothers);

@@ -14,20 +14,20 @@ import { categoryTable } from '../drizzle/schema';
    })
  }
 
- //creating a new user
+ //creating a new category
  export const createcategoryService = async (category: TIcategory)  => {
        await db.insert(categoryTable).values(category)
     return { msg:"User created successfully"}
  }
 
 
- //updating users
+ //updating category
  export const updatecategoryService = async (id: number, category: TIcategory) => {
      await db.update(categoryTable).set(category).where(eq(categoryTable.id, id))
     return { msg:"User updated successfully"}
  }
 
- //deleting users
+ //deleting category
  export const deletecategoryService = async (id: number) => {
      await db.delete(categoryTable).where(eq(categoryTable.id, id))
     return { msg:"User deleted successfully"}

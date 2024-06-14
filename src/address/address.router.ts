@@ -7,9 +7,9 @@ import { addressSchema } from "../validators.";
 export const addressRouter = new Hono();
 
 
-//get all restraunts
+//get all adresses
 addressRouter.get("/address",listaddress);
-//get a single restraunt
+//get a single adress
 addressRouter.get("/address/:id", getaddress);
 //create a user
 addressRouter.post("/address",zValidator('json',addressSchema, (result,c)=>{
@@ -18,7 +18,7 @@ addressRouter.post("/address",zValidator('json',addressSchema, (result,c)=>{
     }
   }),createaddress);
   
-  //update a user
+  //update a address
   addressRouter.put("/address/:id", updateaddress); 
 
 
@@ -28,7 +28,7 @@ addressRouter.post("/address",zValidator('json',addressSchema, (result,c)=>{
   }
 }),createaddress);
 
-//delete user
+//delete adress
 addressRouter.delete("/address/:id", deleteaddress)
 
 addressRouter.get("/address", getaddress);

@@ -12,7 +12,7 @@ export const listaddress= async ( c: Context) => { ``
   return c.json(data,200);
 }
 
-//getting restraunt
+//getting address
 export const getaddress = async ( c: Context) => {
   const id = parseInt(c.req.param("id"));
   if(isNaN(id)) return c.text("Invalid ID",400) 
@@ -24,7 +24,7 @@ export const getaddress = async ( c: Context) => {
 return c.json(address,200);
 }
 
-//creating restraunt
+//creating address
 export const createaddress = async ( c: Context) => {
   try {
     const address = await c.req.json();
@@ -38,7 +38,7 @@ export const createaddress = async ( c: Context) => {
   }
 }
 
-//updating restraunt
+//updating address
 export const updateaddress = async(c:Context) => {
       const id = Number(c.req.param("id"));
       const address = await c.req.json();
@@ -54,7 +54,7 @@ export const updateaddress = async(c:Context) => {
       return c.json({msg:res},201);
 }
 
-//deleting user
+//deleting address
 export const deleteaddress = async(c:Context) => {
       const id = Number(c.req.param("id"));
       if (isNaN(id)) return c.text("invalid Id",400);

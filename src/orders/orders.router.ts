@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { Context } from "hono";
-import { listOrders, getOrders, createOrders, updateOrders, deleteOrders } from "./orders.controller";
+import { listOrders, getOrders, createOrders, updateOrders, deleteOrders,OrderWithResraunt  } from "./orders.controller";
 import { zValidator } from "@hono/zod-validator";
 import { OrdersSchema } from "../validators.";
 
@@ -32,3 +32,8 @@ ordersRouter.get("/Orders", zValidator('json', OrdersSchema, (result, c) => {
 ordersRouter.delete("/Orders/:id", deleteOrders);
 
 ordersRouter.get("/Orders", getOrders);
+
+
+//extra
+
+ordersRouter.get("/OrderWithResraunt", OrderWithResraunt);

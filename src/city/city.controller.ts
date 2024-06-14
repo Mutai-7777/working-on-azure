@@ -53,15 +53,15 @@ export const updatecity = async(c:Context) => {
       return c.json({msg:res},201);
 }
 
-//deleting user
+//deleting city
 export const deletecity = async(c:Context) => {
       const id = Number(c.req.param("id"));
       if (isNaN(id)) return c.text("invalid Id",400);
       try{
-      //search user
+      //search city
       const restraunt = await getcityService(id);
       if ( restraunt == undefined ) return c.text("User not found",404);
-      //delete user
+      //delete city
       const res = await deletecityService(id);
       if (!res) return c.text("User not deleted",404);
       return c.json({msg:res},201);

@@ -8,13 +8,13 @@ import { pgEnum } from 'drizzle-orm/pg-core';
 
 
 //authentication
-export const roleEnum = pgEnum("role",["admin","user"])
+  export const roleEnum = pgEnum("role",["admin","user","driver","owner"])
 export const AuthOnUsersTable = pgTable("auth_on_users",{
     id: serial("id").primaryKey(),
     userId:integer("user_id").notNull().references(()=> UsersTable.id,{ onDelete:"cascade"}),
     password:varchar("password"),
     username:varchar("username"),
-    role:roleEnum("role").default("user")
+    role:roleEnum("role").default("driver")
 
 })
 //relationship
@@ -22,8 +22,17 @@ export const authRelations = relations(AuthOnUsersTable,({one}) => ({
     user : one(UsersTable,{
         fields: [AuthOnUsersTable.userId],
         references: [UsersTable.id]
+    }),
+    driver :one(driverTable,{
+        fields: [AuthOnUsersTable.userId],
+        references: [driverTable.id]
+    }),
+    owner: one(restrauntownerTable,{
+        fields: [AuthOnUsersTable.userId],
+        references: [restrauntownerTable.id]
     })
 }));
+
 // Restaurant Table
 export const RestrauntTable = pgTable('restaurant', {
     id: serial("id").primaryKey(),

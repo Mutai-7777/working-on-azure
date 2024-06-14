@@ -9,7 +9,7 @@ export const categoryRouter = new Hono();
 
 //get all category 
 categoryRouter.get("/category",listcategory);
-//get a single restraunt
+//get a single category
 categoryRouter.get("/category/:id", getcategory);
 //create a user
 categoryRouter.post("/category",zValidator('json',categorySchema, (result,c)=>{
@@ -18,7 +18,7 @@ categoryRouter.post("/category",zValidator('json',categorySchema, (result,c)=>{
     }
   }),createcategory);
   
-  //update a user
+  //update a category
   categoryRouter.put("/category/:id", updatecategory); 
 
 
@@ -28,7 +28,7 @@ categoryRouter.post("/category",zValidator('json',categorySchema, (result,c)=>{
   }
 }),createcategory);
 
-//delete user
+//delete category
 categoryRouter.delete("/category/:id", deletecategory)
 
 categoryRouter.get("/category", getcategory);

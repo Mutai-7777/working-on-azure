@@ -21,6 +21,7 @@ import { ordersRouter } from './orders/orders.router'
 import { restrauntownerRouter } from './restraunt_owner/restraunt_owner.router'
 import { orderMenuItemTable, stateTable } from './drizzle/schema'
 import { authRouter } from './auth/auth.router'
+import {html , raw} from "hono/html"
 
 
 
@@ -45,7 +46,56 @@ app.get('/api/time', (c) => {
 })
 
 app.get('/ok', (c) => {
-  return c.text('Hello Hono Iam here and server is running')
+  return c.html(html`
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello, Ian Mutai</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: brown;
+    pointer:
+  }
+
+  h1 {
+    color: #333;
+    font-size: 2em;
+  }
+
+  p {
+    color: #666;
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello ----IAN MUTAI---- HERE</h1>
+    <p1> lets dive into Azure Together!</p1>
+  </div>
+</body>
+</html>
+
+
+    
+    `)
 })
 
 //this is for custom route 
@@ -72,7 +122,10 @@ console.log(`Server is running on port ${process.env.PORT}`)
 serve({
   fetch: app.fetch,
   port: Number(process.env.PORT)|| 3000
-})
+});
+
+
+/////
 
 
 

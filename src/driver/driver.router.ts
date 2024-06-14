@@ -3,14 +3,15 @@ import { Context } from "hono";
 import { listdriver, getdriver, createdriver, updatedriver, deletedriver } from "./driver.controller";
 import { zValidator } from "@hono/zod-validator";
 import { driverSchema } from "../validators.";
+import { adminRoleAuth,driverRoleAuth } from "../midddleware/bearAuth"
 
 export const driverRouter = new Hono();
 
 // Get all drivers
-driverRouter.get("/driver", listdriver);
+driverRouter.get("/driver", driverRoleAuth ,listdriver);
 
 // Get a single driver
-driverRouter.get("/driver/:id", getdriver);
+driverRouter.get("/driver/:id",adminRoleAuth ,getdriver);
 
 // Create a driver
 driverRouter.post("/driver", zValidator('json', driverSchema, (result, c) => {

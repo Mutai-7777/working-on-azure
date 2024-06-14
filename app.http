@@ -3,7 +3,7 @@
 
   ###all users
   
- GET http://localhost:8000/users
+ GET http://localhost:8000/ok
 
 ### insert users
 
@@ -26,9 +26,11 @@ POST http://localhost:8000/users
   Accept: application/json
 
    {
-    "userId": 1,
-    "username": "zinadene",
-   "password": "ddd"
+    "userId": 4,
+    "username": "Messi",
+   "password": "mmm",
+    "role": "driver"
+   
    
    }
 
@@ -41,17 +43,17 @@ POST http://localhost:8000/users
     Content-Type: application/json
 
     {    
-        "username": "zinadene",
-        "password": "ddd"
+        "username": "Christiano",
+   "password": "mmm"
    
 
     }
 
 ###admin 
-  GET http://localhost:8000/users/6
-   Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBhYmxvIiwicm9sZSI6ImFkbWluIiwidXNlcklkIjo1LCJleHAiOjE3MTgxMTU3ODJ9.zdECR9BXHbkl88FhJK4YThAcXOFre8o_agsE10rmojs
+  GET http://localhost:8000/users/
+   Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVJ1c2VybmFtZSI6IkNocmlzdGlhbm8iLCJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOjIsImV4cCI6MTcxODI5NjAyN30.VqCduKXgJXQS4t8xsPutO76q51sZUo1MjQU7Cv55Ces 
 
-### user//non admin
+   ###
 POST   http://localhost:8000/login
      Content-Type: application/json
 
@@ -62,15 +64,14 @@ POST   http://localhost:8000/login
     }
 
 ###user // non admin
-GET http://localhost:8000/users/6
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InppbmFkZW5lIiwicm9sZSI6InVzZXIiLCJ1c2VySWQiOjYsImV4cCI6MTcxODEyMzAzMX0.z_xKKJ5rwKt0E8po-G0eqiPrkTr1L5ndIfUUCKQOVIE
-
+GET http://localhost:8000/users/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1lc3NpIiwicm9sZSI6InVzZXIiLCJ1c2VySWQiOjMsImV4cCI6MTcxODI5MDUxN30.VupM3kfH5IDHrb9LtN8nVEBC5SNaipomqityWEmL5p0
 
 
 
 
 ### category
-GET http://localhost:8000/category
+GET http://localhost:8000/restrauntwithothers
 
 ### insert category
 
@@ -115,10 +116,10 @@ Content-Type: application/json
 Accept: application/json
 
 {
-        "name":"Kentucky",
-        "street_address":"texas",
+        "name":"Chicken Inn",
+        "street_address":"Houston",
         "zip_code":345,
-        "city_id":1
+        "city_id":2
        
 }
         

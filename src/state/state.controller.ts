@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { stateService, getstateService, updatestateService, createstateService, deletestateService } from "./state.service";
+import { stateService, getstateService, updatestateService, createstateService, deletestateService,StateWithCity } from "./state.service";
 
 export const liststate = async (c: Context) => {
     const data = await stateService();
@@ -62,4 +62,21 @@ export const deletestate = async (c: Context) => {
     } catch (error: any) {
         return c.json({ error: error?.message }, 400);
     }
+}
+
+
+
+////state with cities
+
+export const stateWithcities = async(c:Context) => {
+    try{
+    const data = await StateWithCity();
+    if (data == null || data.length == 0) {
+        return c.text("hello Ian nothing  found", 404);
+    }
+    return c.json(data, 200);
+}
+catch (error:any){
+    return c.json({ error: error?.message }, 400);
+}
 }

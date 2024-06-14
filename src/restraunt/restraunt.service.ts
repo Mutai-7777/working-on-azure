@@ -32,3 +32,31 @@ import { RestrauntTable } from '../drizzle/schema';
      await db.delete(RestrauntTable).where(eq(RestrauntTable.id, id))
     return { msg:"User deleted successfully"}
  }
+
+
+
+ ////connection with other tables
+
+ export const RestrauntWithOthersService = async () => {
+         
+         return await db.query.RestrauntTable.findMany({
+            with : {
+               orders: true,
+               owners: true,
+               city : {
+                  columns:{
+                     name:true,
+                     
+                  }
+               },
+               menuItems : {
+                  columns:{
+                     name:true,
+                     price:true
+                  }
+               }
+
+            }
+         })
+     
+ }

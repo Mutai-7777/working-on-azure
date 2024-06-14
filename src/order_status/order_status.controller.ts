@@ -16,7 +16,7 @@ export const listOrderStatus = async (c: Context) => {
   return c.json(data, 200);
 };
 
-// Getting restaurant
+// Getting 
 export const getOrderStatus = async (c: Context) => {
   const id = parseInt(c.req.param("id"));
   if (isNaN(id)) return c.text("Invalid ID", 400);
@@ -28,7 +28,7 @@ export const getOrderStatus = async (c: Context) => {
   return c.json(orderStatus, 200);
 };
 
-// Creating restaurant
+// Creating 
 export const createOrderStatus = async (c: Context) => {
   try {
     const orderStatus = await c.req.json();
@@ -41,11 +41,11 @@ export const createOrderStatus = async (c: Context) => {
   }
 };
 
-// Updating restaurant
+// Updating 
 export const updateOrderStatus = async (c: Context) => {
   const id = Number(c.req.param("id"));
   const orderStatus = await c.req.json();
-  // Search user
+  // Search 
   const searchedOrderStatus = await getOrderStatusService(id);
   if (searchedOrderStatus == undefined) return c.text("User not found", 404);
   // Get data and update
@@ -55,15 +55,15 @@ export const updateOrderStatus = async (c: Context) => {
   return c.json({ msg: res }, 201);
 };
 
-// Deleting user
+// Deleting 
 export const deleteOrderStatus = async (c: Context) => {
   const id = Number(c.req.param("id"));
   if (isNaN(id)) return c.text("Invalid Id", 400);
   try {
-    // Search user
+    // Search 
     const restaurant = await getOrderStatusService(id);
     if (restaurant == undefined) return c.text("User not found", 404);
-    // Delete user
+    // Delete 
     const res = await deleteOrderStatusService(id);
     if (!res) return c.text("User not deleted", 404);
     return c.json({ msg: res }, 201);

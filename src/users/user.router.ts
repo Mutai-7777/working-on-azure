@@ -35,4 +35,4 @@ userRouter.get("/users", zValidator('json',userSchema,(result,c)=>{
 }),createUser);
 
 //delete user
-userRouter.delete("/users/:id", deleteUser)
+userRouter.delete("/users/:id", deleteUser);

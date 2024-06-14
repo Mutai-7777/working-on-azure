@@ -7,9 +7,9 @@ import { orderMenuItemSchema } from "../validators.";
 export const orderMenuItemRouter = new Hono();
 
 
-//get all restraunts
+//get all 
 orderMenuItemRouter.get("/orderMenuItem",listOrderMenuItem);
-//get a single restraunt
+//get a single 
 orderMenuItemRouter.get("/orderMenuItem/:id", getOrderMenuItem);
 //create a user
 orderMenuItemRouter.post("/orderMenuItem",zValidator('json',orderMenuItemSchema, (result,c)=>{
@@ -18,7 +18,7 @@ orderMenuItemRouter.post("/orderMenuItem",zValidator('json',orderMenuItemSchema,
     }
   }),createOrderMenuItem);
   
-  //update a user
+  //update 
   orderMenuItemRouter.put("/orderMenuItem/:id", updateOrderMenuItem); 
 
 
@@ -28,7 +28,7 @@ orderMenuItemRouter.post("/orderMenuItem",zValidator('json',orderMenuItemSchema,
   }
 }),createOrderMenuItem);
 
-//delete user
+//delete 
 orderMenuItemRouter.delete("/orderMenuItem/:id", deleteOrderMenuItem)
 
 orderMenuItemRouter.get("/orderMenuItem", getOrderMenuItem);

@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { Context } from "hono";
-import { liststate, getstate, createstate, updatestate, deletestate } from "./state.controller";
+import { liststate, getstate, createstate, updatestate, deletestate, stateWithcities } from "./state.controller";
 import { zValidator } from "@hono/zod-validator";
 import { stateSchema } from "../validators.";
 
@@ -32,3 +32,7 @@ stateRouter.get("/state", zValidator('json', stateSchema, (result, c) => {
 stateRouter.delete("/state/:id", deletestate);
 
 stateRouter.get("/state", getstate);
+
+
+//state with citi
+ stateRouter.get("/stateWithcity", stateWithcities);

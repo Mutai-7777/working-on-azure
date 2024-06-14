@@ -13,8 +13,8 @@ export const client = new Client({connectionString: process.env.Database_URL as 
 
 
 
-//const //DatabaseUrl = process.env.Database_URL as string; failed to connect to database on azure
-const DatabaseUrl = ("postgresql://project1bd_owner:67uKeRnNgiIW@ep-yellow-silence-a5jgqdnz.us-east-2.aws.neon.tech/working?sslmode=require")
+const DatabaseUrl = process.env.Database_URL as string; 
+
 if (!DatabaseUrl) {
     throw new Error("DatabaseUrl not set");
 }

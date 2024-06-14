@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { OrdersService, getOrdersService, updateOrdersService, createOrdersService, deleteOrdersService } from "./orders.service";
+import { OrdersService, getOrdersService, updateOrdersService, createOrdersService, deleteOrdersService ,OrderWithResrauntService} from "./orders.service";
 
 export const listOrders = async (c: Context) => {
     const data = await OrdersService();
@@ -63,3 +63,18 @@ export const deleteOrders = async (c: Context) => {
         return c.json({ error: error?.message }, 400);
     }
 }
+
+//extra 
+export const OrderWithResraunt = async (c:Context) => {
+    try{
+        const data = await OrderWithResrauntService();
+        if (data== null) {
+            return c.text("hello Ian nothing  found", 404);
+        }
+        return c.json(data,200);
+    }
+    catch (error :any){
+        return c.json({error: error?.message}, 400);
+
+    }
+};

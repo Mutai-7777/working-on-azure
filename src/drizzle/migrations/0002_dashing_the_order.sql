@@ -1,0 +1,1 @@
+ALTER TABLE "auth_on_users" ALTER COLUMN "role" SET DEFAULT 'driver';

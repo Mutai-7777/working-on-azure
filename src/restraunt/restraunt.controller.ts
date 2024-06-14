@@ -1,5 +1,5 @@
 import { Context} from "hono"
-import { restrauntService,getrestrauntService,updaterestrauntService,createrestrauntService,deleterestrauntService} from "./restraunt.service"
+import { restrauntService,getrestrauntService,updaterestrauntService,createrestrauntService,deleterestrauntService, RestrauntWithOthersService} from "./restraunt.service"
 
 
 export const listrestraunt= async ( c: Context) => { ``
@@ -70,4 +70,23 @@ export const deleterestraunt = async(c:Context) => {
       catch (error:any) {
         return c.json({error:error?.message},400)
       }
+}
+
+
+////restraunt with others
+
+export const restrauntwithothers = async ( c: Context) => { 
+  try{
+  const data = await RestrauntWithOthersService();
+  if (data == null || data.length==0) {
+    return c.text("hello Ian no restraunts found",404)
+
+  }
+
+  return c.json(data,200);
+
+}
+ catch (error:any) {
+  return c.json({error:error?.message},400)
+ }
 }

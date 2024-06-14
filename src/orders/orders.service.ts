@@ -30,3 +30,29 @@ export const deleteOrdersService = async (id: number) => {
     await db.delete(OrdersTable).where(eq(OrdersTable.id, id));
     return { msg: "Orders deleted successfully" };
 }
+
+//extra services
+
+///extra
+export const OrderWithResrauntService = async ()=>{
+    return await db.query.OrdersTable.findMany({
+        with:{
+            driver:true,
+
+            restaurant:true,
+
+            orderStatuses:true,
+
+            orderMenuItems: {
+                columns: {
+                    quantity:true,
+                    price:true,
+                    comment:true
+                }
+            }
+            
+
+        }
+    })
+}
+
